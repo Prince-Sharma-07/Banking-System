@@ -36,8 +36,7 @@ class GFG{
         System.out.println("Welcome To SBI!!! \nPlease enter your details: ");
         while(choice != 6) {
             System.out.println("Please Select an Option: ");
-            System.out.println("1. Create new account\n2. Display all account details\n" +
-                    "3. Search By account number\n4. Deposit the amount\n5. Withdraw the amount\n6. Exit");
+            System.out.println("1. Create new account\n2. Display all account details\n3. Search By account number\n4. Deposit the amount\n5. Withdraw the amount\n6. Exit");
             choice = sc.nextInt();
             switch (choice) {
                 case 1: {
@@ -56,7 +55,7 @@ class GFG{
                 case 2: {
                     System.out.println("Account details are: ");
                     System.out.println("----------------------------------");
-                    for (Bank account : accounts) {
+                    for(Bank account : accounts) {
                         System.out.println("Name: " + account.name);
                         System.out.println("Account_no: " + account.account_no);
                         System.out.println("Balance: " + account.balance);
@@ -73,8 +72,10 @@ class GFG{
                             System.out.println("Name: " + account.name);
                             System.out.println("Account_no: " + account.account_no);
                             System.out.println("Balance: " + account.balance);
+                            break;
                         }
                     }
+                    System.out.println("Account Not Found!!");
                    break;
                 }
                 case 4: {
@@ -85,11 +86,9 @@ class GFG{
                             System.out.println("Enter the amount to be deposited: ");
                             double amount = sc.nextDouble();
                             account.deposit(amount);
-                        } else {
-                            System.out.println("Account Not found!!");
                         }
-                        break;
                     }
+                        System.out.println("Account Not found!!");
                     break;
                 }
                 case 5: {
